@@ -1,41 +1,87 @@
 import tkinter as tk
 from home import Home
+from tkinter import *
 
 class Login:
     def __init__(self, master):
         self.master = master
         self.master.title("Login")
-        self.master.geometry("500x400")
+        
 
-        self.label_usuario = tk.Label(self.master, text="Usuário:", font=("Arial", 16))
-        self.label_usuario.pack()
-        self.entry_usuario = tk.Entry(self.master)
-        self.entry_usuario.pack()
+        self.master.geometry("600x400")
+        self.master.configure(bg = "#ffffff")
+        self.canvas = Canvas(
+            master,
+            bg = "#ffffff",
+            height = 400,
+            width = 600,
+            bd = 0,
+            highlightthickness = 0,
+            relief = "ridge")
+        self.canvas.place(x = 0, y = 0)
 
-        self.label_senha = tk.Label(self.master, text="Senha:")
-        self.label_senha.pack()
-        self.entry_senha = tk.Entry(self.master, show="*")
-        self.entry_senha.pack()
+        background_img = PhotoImage(file = f"img/background.png")
+        background = self.canvas.create_image(
+            290, 200,
+            image=background_img)
 
-        self.button_login = tk.Button(self.master, text="Login", command=self.fazer_login)
-        self.button_login.pack()
 
-        # centralizar a janela
-        window_width = 400
-        window_height = 300
-        screen_width = root.winfo_screenwidth()
-        screen_height = root.winfo_screenheight()
-        x = int((screen_width/2) - (window_width/2))
-        y = int((screen_height/2) - (window_height/2))
-        root.geometry("{}x{}+{}+{}".format(window_width, window_height, x, y))
+        entry0_img = PhotoImage(file = f"img/img_textBox0.png")
+        entry0_bg = self.canvas.create_image(
+            157.5, -49.0,
+            image = entry0_img)
 
-    def fazer_login(self):
-        usuario = self.entry_usuario.get()
-        senha = self.entry_senha.get()
-        if usuario == "admin" and senha == "admin":
+        self.username_entry = Entry(
+            bd=0,
+            bg="#ffffff",
+            highlightthickness=0)
+
+        self.username_entry.place(
+            x=361, y=151,
+            width=203,
+            height=34)
+
+        entry1_img = PhotoImage(file = f"img/img_textBox1.png")
+        entry1_bg = self.canvas.create_image(
+            157.5, -49.0,
+            image = entry1_img)
+
+        self.password_entry = Entry(
+            bd=0,
+            bg="#ffffff",
+            highlightthickness=0,
+            show="*")
+
+        self.password_entry.place(
+            x=361, y=238,
+            width=203,
+            height=34)
+
+        img0 = PhotoImage(file="img/img0.png")
+        self.login_button = Button(
+            image=img0,
+            borderwidth=0,
+            highlightthickness=0,
+            command=self.login,
+            relief="flat")
+
+        self.login_button.place(
+            x=414, y=302,
+            width=97,
+            height=34)
+
+        self.master.resizable(False, False)
+
+    def login(self):
+        username = self.username_entry.get()
+        password = self.password_entry.get()
+
+        if username == "admin" and password == "admin":
             self.master.destroy()
-            home = Home()
-
+            Home = Home()
+        else:
+            print("Invalid username or password.")
+    
 root = tk.Tk()
 login = Login(root)
 root.mainloop()
