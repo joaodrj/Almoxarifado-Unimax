@@ -1,16 +1,14 @@
 import tkinter as tk
 from home import Home
-from tkinter import *
 
 class Login:
     def __init__(self, master):
         self.master = master
         self.master.title("Login")
-        
-
         self.master.geometry("600x400")
         self.master.configure(bg = "#ffffff")
-        self.canvas = Canvas(
+
+        self.canvas = tk.Canvas(
             master,
             bg = "#ffffff",
             height = 400,
@@ -18,20 +16,19 @@ class Login:
             bd = 0,
             highlightthickness = 0,
             relief = "ridge")
-        self.canvas.place(x = 0, y = 0)
+        self.canvas.pack()
 
-        background_img = PhotoImage(file = f"img/background.png")
-        background = self.canvas.create_image(
+        self.background_img = tk.PhotoImage(file = "img/background.png")
+        self.canvas.create_image(
             290, 200,
-            image=background_img)
+            image=self.background_img)
 
-
-        entry0_img = PhotoImage(file = f"img/img_textBox0.png")
-        entry0_bg = self.canvas.create_image(
+        self.entry0_img = tk.PhotoImage(file = "img/img_textBox0.png")
+        self.entry0_bg = self.canvas.create_image(
             157.5, -49.0,
-            image = entry0_img)
+            image = self.entry0_img)
 
-        self.username_entry = Entry(
+        self.username_entry = tk.Entry(
             bd=0,
             bg="#ffffff",
             highlightthickness=0)
@@ -41,12 +38,12 @@ class Login:
             width=203,
             height=34)
 
-        entry1_img = PhotoImage(file = f"img/img_textBox1.png")
-        entry1_bg = self.canvas.create_image(
+        self.entry1_img = tk.PhotoImage(file = "img/img_textBox1.png")
+        self.entry1_bg = self.canvas.create_image(
             157.5, -49.0,
-            image = entry1_img)
+            image = self.entry1_img)
 
-        self.password_entry = Entry(
+        self.password_entry = tk.Entry(
             bd=0,
             bg="#ffffff",
             highlightthickness=0,
@@ -57,9 +54,9 @@ class Login:
             width=203,
             height=34)
 
-        img0 = PhotoImage(file="img/img0.png")
-        self.login_button = Button(
-            image=img0,
+        self.img0 = tk.PhotoImage(file="img/img0.png")
+        self.login_button = tk.Button(
+            image=self.img0,
             borderwidth=0,
             highlightthickness=0,
             command=self.login,
@@ -78,7 +75,7 @@ class Login:
 
         if username == "admin" and password == "admin":
             self.master.destroy()
-            Home = Home()
+            home = Home()
         else:
             print("Invalid username or password.")
     
