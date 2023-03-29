@@ -1,20 +1,33 @@
 import tkinter as tk
+from tkinter import *
+
 
 class Home:
-    def __init__(self):
-        self.master = tk.Tk()
-        self.master.title("Home")
+    def __init__(self, master):
+        self.master = master
+        self.master.geometry("1366x768")
+        self.master.configure(bg = "#FFFFFF")
+        self.canvas = Canvas(
+            master,
+            bg = "#FFFFFF",
+            height = 768,
+            width = 1366,
+            bd = 0,
+            highlightthickness = 0,
+            relief = "ridge")
+        self.canvas.place(x = 0, y = 0) 
 
-        # Cria uma barra de menus
-        menu_bar = tk.Menu(self.master)
-        self.master.config(menu=menu_bar)
+        self.background_img = tk.PhotoImage(file = f"img/tela_inicial/background.png")
+        self.background = self.canvas.create_image(
+        683.0, 383.5,
+        image=self.background_img)
 
-        # Adiciona um item "Arquivo" com um submenu "Sair"
-        arquivo_menu = tk.Menu(menu_bar, tearoff=0)
-        arquivo_menu.add_command(label="Sair", command=self.master.quit)
-        menu_bar.add_cascade(label="Arquivo", menu=arquivo_menu)
-
-        self.label_bem_vindo = tk.Label(self.master, text="Controle de Estoque Unimax", font=("Arial", 16))
-        self.label_bem_vindo.pack()
+        self.img0 = tk.PhotoImage(file = f"img/tela_inicial/img0.png")
+        self.b0 = tk.Button(
+            image = self.img0,
+            borderwidth = 0,
+            highlightthickness = 0,
+            relief = "flat")
+    
 
         self.master.mainloop()
