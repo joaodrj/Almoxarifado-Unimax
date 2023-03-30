@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import *
 
-
 class Home:
     def __init__(self, master):
         self.master = master
@@ -127,34 +126,7 @@ class Home:
             width = 319,
             height = 207)
         self.canvas.create_window(925, 298, anchor=NW, window=self.b6)
-
-
+        
         self.master.mainloop()
 
 
-
-from estoque import EstoqueDB
-
-class Estoque:
-    def __init__(self, master):
-        self.master = master
-        self.master.geometry("800x600")
-        self.master.configure(bg = "#FFFFFF")
-
-        self.label = tk.Label(self.master, text="Estoque", font=("Helvetica", 16))
-        self.label.pack(pady=20)
-
-        # Criando o objeto EstoqueDB para lidar com o banco de dados
-        self.db = EstoqueDB("estoque.db")
-
-        # Inserindo alguns dados no banco de dados para testar
-        self.db.insert("Produto 1", 1234, 10, "Seção A")
-        self.db.insert("Produto 2", 5678, 20, "Seção B")
-
-        # Recuperando todos os dados do banco de dados e imprimindo na janela
-        estoque = self.db.fetch()
-        for produto in estoque:
-            label = tk.Label(self.master, text=produto[1], font=("Helvetica", 12))
-            label.pack(pady=5)
-
-        self.master.mainloop()
