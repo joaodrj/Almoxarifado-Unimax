@@ -43,7 +43,7 @@ class Home:
             image = self.img1,
             borderwidth = 0,
             highlightthickness = 0,
-            relief = "flat")
+            relief = "flat",)
 
         self.b1.place(
             x = 0, y = 478,
@@ -126,7 +126,6 @@ class Home:
             width = 319,
             height = 207)
         self.canvas.create_window(925, 298, anchor=NW, window=self.b6)
-        
-        self.master.mainloop()
 
+        self.master.mainloop()
 
