@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import *
+from PIL import Image, ImageTk
 
 #cria a classe Home para a tela principal
 class Home:
@@ -142,29 +143,34 @@ class Estoque:
     def __init__(self, master):
         self.master = master
         self.master.geometry("1366x768")
-        self.master.configure(bg="#FFFFFF")
-        self.master.title("Estoque")
+        self.master.configure(bg="#000000")
 
         # cria um frame na parte superior da janela
-        frame_topo = tk.Frame(self.master, bg="#696969", height=50)
+        frame_topo = tk.Frame(self.master, bg="#2B2F4D", height=66)
         frame_topo.grid(row=0, column=0, sticky='we') 
 
-        # adiciona um label ao topo do frame
-        label_topo = tk.Label(frame_topo, text="Estoque", font=("Arial", 18), fg="#000000", bg="#ADD8E6")
-        label_topo.pack(side="left", padx=10, pady=10)
+        '''# adiciona um label ao topo do frame
+        label_topo = tk.Label(frame_topo, text="Estoque", font=("Arial", 18), fg="#000000", bg="#2B2F4D")
+        label_topo.pack(side="left", padx=10, pady=10)'''
 
         # cria um frame para o meio onde serão prenchidas as informações
-        frame_meio = tk.Frame(self.master, bg="#DCDCDC", height=350)
+        frame_meio = tk.Frame(self.master, bg="#D9D9D9", height=350)
         frame_meio.grid(row=1, column=0, padx=0, pady=1, sticky='we')
 
         # cria um frame na parte inferior onde sera mostrado o estoque
-        frame_baixo = tk.Frame(self.master, bg="#696969", height=365)
+        frame_baixo = tk.Frame(self.master, bg="white", height=350)
         frame_baixo.grid(row=2, column=0, padx=0, pady=1, sticky='we')
 
         # cria um novo canvas para os widgets
         self.canvas = tk.Canvas(self.master, bg="#FFFFFF", height=768, width=1366, bd=0, highlightthickness=0, relief="ridge")
         self.canvas.grid(row=3, column=0, sticky='nsew')
 
- 
 
 
+        #Abrindo imagem do icone da tela estoque
+        img_tela_estoque = Image.open('img/icones/inventario.png')
+        img_tela_estoque = img_tela_estoque.resize((45,45))
+        img_tela_estoque = ImageTk.PhotoImage(img_tela_estoque)
+
+        img_logo_estoque = Label(frame_topo, image= img_tela_estoque, text= 'Estoque', width= 1366, compound=LEFT, relief= RAISED, anchor= NW, font=('Verdana 20 bold'), bg='#2B2F4D', fg='#000000')
+        img_logo_estoque.place(x=0, y=0)
