@@ -167,10 +167,12 @@ class Estoque:
 
 
 
-        #Abrindo imagem do icone da tela estoque
-        img_tela_estoque = Image.open('img/icones/inventario.png')
-        img_tela_estoque = img_tela_estoque.resize((45,45))
-        img_tela_estoque = ImageTk.PhotoImage(img_tela_estoque)
+        # Abrindo imagem do ícone da tela estoque
+        self.img_tela_estoque = Image.open('img/icones/inventario.png')
+        self.img_tela_estoque = self.img_tela_estoque.resize((45,45))
+        self.img_tela_estoque = ImageTk.PhotoImage(self.img_tela_estoque)
 
-        img_logo_estoque = Label(frame_topo, image= img_tela_estoque, text= 'Estoque', width= 1366, compound=LEFT, relief= RAISED, anchor= NW, font=('Verdana 20 bold'), bg='#2B2F4D', fg='#000000')
-        img_logo_estoque.place(x=0, y=0)
+        # Adiciona o ícone da tela no topo do frame
+        self.img_logo_estoque = Label(frame_topo, image=self.img_tela_estoque, text='   Estoque', width=1366, compound=LEFT, anchor=NW, font=('Verdana 35 bold'), bg='#2B2F4D', fg='#FFFFFF')
+        self.img_logo_estoque.image = self.img_tela_estoque
+        self.img_logo_estoque.pack(side=LEFT, padx=15, pady=10)
