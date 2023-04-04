@@ -7,6 +7,7 @@ class Login:
         self.master.title("Login")
         self.master.geometry("600x400")
         self.master.configure(bg = "#ffffff")
+        
 
         self.canvas = tk.Canvas(
             master,

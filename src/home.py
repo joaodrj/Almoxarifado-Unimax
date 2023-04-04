@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import *
 
+#cria a classe Home para a tela principal
 class Home:
     def __init__(self, master):
         self.master = master
@@ -21,12 +22,14 @@ class Home:
         683.0, 383.5,
         image=self.background_img)
 
+        #BOTÃO ESTOQUE
         self.img0 = tk.PhotoImage(file = f"img/tela_inicial/img0.png")
         self.b0 = tk.Button(
             image = self.img0,
             borderwidth = 0,
             highlightthickness = 0,
-            relief = "flat")
+            relief = "flat",
+            command=self.open_estoque_window)
         
         self.b0.place(
             x = 0, y = 236,
@@ -128,4 +131,29 @@ class Home:
         self.canvas.create_window(925, 298, anchor=NW, window=self.b6)
 
         self.master.mainloop()
+
+    def open_estoque_window(self):
+        # Cria a janela de estoque
+        self.estoque_window = Toplevel(self.master)
+        estoque = Estoque(self.estoque_window)
+
+
+class Estoque:
+    def __init__(self, master):
+        self.master = master
+        self.master.geometry("1366x768")
+        self.master.configure(bg="#FFFFFF")
+        self.master.title(" ")
+        
+        # cria um novo frame azul na parte superior da janela
+        frame_topo = tk.Frame(self.master, bg="blue", height=50)
+        frame_topo.pack(fill="x")
+
+        # adiciona um label dentro do frame
+        label_topo = tk.Label(frame_topo, text="Meu Label", fg="white", bg="blue")
+        label_topo.pack()
+
+
+
+
 
