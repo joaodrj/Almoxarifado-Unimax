@@ -143,17 +143,28 @@ class Estoque:
         self.master = master
         self.master.geometry("1366x768")
         self.master.configure(bg="#FFFFFF")
-        self.master.title(" ")
-        
-        # cria um novo frame azul na parte superior da janela
-        frame_topo = tk.Frame(self.master, bg="blue", height=50)
-        frame_topo.pack(fill="x")
+        self.master.title("Estoque")
 
-        # adiciona um label dentro do frame
-        label_topo = tk.Label(frame_topo, text="Meu Label", fg="white", bg="blue")
-        label_topo.pack()
+        # cria um frame na parte superior da janela
+        frame_topo = tk.Frame(self.master, bg="#696969", height=50)
+        frame_topo.grid(row=0, column=0, sticky='we') 
 
+        # adiciona um label ao topo do frame
+        label_topo = tk.Label(frame_topo, text="Estoque", font=("Arial", 18), fg="#000000", bg="#ADD8E6")
+        label_topo.pack(side="left", padx=10, pady=10)
 
+        # cria um frame para o meio onde serão prenchidas as informações
+        frame_meio = tk.Frame(self.master, bg="#DCDCDC", height=350)
+        frame_meio.grid(row=1, column=0, padx=0, pady=1, sticky='we')
 
+        # cria um frame na parte inferior onde sera mostrado o estoque
+        frame_baixo = tk.Frame(self.master, bg="#696969", height=365)
+        frame_baixo.grid(row=2, column=0, padx=0, pady=1, sticky='we')
+
+        # cria um novo canvas para os widgets
+        self.canvas = tk.Canvas(self.master, bg="#FFFFFF", height=768, width=1366, bd=0, highlightthickness=0, relief="ridge")
+        self.canvas.grid(row=3, column=0, sticky='nsew')
+
+ 
 
 
