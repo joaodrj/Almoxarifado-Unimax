@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import *
 from PIL import Image, ImageTk
+from tkinter import ttk
 
 #cria a classe Home para a tela principal
 class Home:
@@ -176,3 +177,115 @@ class Estoque:
         self.img_logo_estoque = Label(frame_topo, image=self.img_tela_estoque, text='   Estoque', width=1366, compound=LEFT, anchor=NW, font=('Verdana 35 bold'), bg='#2B2F4D', fg='#FFFFFF')
         self.img_logo_estoque.image = self.img_tela_estoque
         self.img_logo_estoque.pack(side=LEFT, padx=15, pady=10)
+
+        #Criando entradas 
+        #Label e entrada para o nome
+        l_nome = Label(frame_meio, text= 'Nome', height=1, anchor=NW, font=('Ivy 10 bold'), bg='#D9D9D9', fg='#000000')
+        l_nome.place(x=10, y=10)
+        e_nome = Entry(frame_meio, width=30, justify='left', relief=SOLID)
+        e_nome.place(x=130, y=11)
+
+        #Label e entrada para a localização
+        l_localizacao = Label(frame_meio, text= 'Localização', height=1, anchor=NW, font=('Ivy 10 bold'), bg='#D9D9D9', fg='#000000')
+        l_localizacao.place(x=10, y=40)
+        e_localizacao = Entry(frame_meio, width=30, justify='left', relief=SOLID)
+        e_localizacao.place(x=130, y=41)
+
+        #Label e entrada para a descrição
+        l_descricao = Label(frame_meio, text= 'Descrição', height=1, anchor=NW, font=('Ivy 10 bold'), bg='#D9D9D9', fg='#000000')
+        l_descricao.place(x=10, y=70)
+        e_descricao = Entry(frame_meio, width=30, justify='left', relief=SOLID)
+        e_descricao.place(x=130, y=71)
+
+        #Label e entrada para a quantidade
+        l_quantidade = Label(frame_meio, text= 'Quantidade', height=1, anchor=NW, font=('Ivy 10 bold'), bg='#D9D9D9', fg='#000000')
+        l_quantidade.place(x=10, y=100)
+        e_quantidade = Entry(frame_meio, width=30, justify='left', relief=SOLID)
+        e_quantidade.place(x=130, y=101)
+
+        #Label e entrada para o codigo de barras
+        l_codigo_barras = Label(frame_meio, text= 'Codigo de Barras', height=1, anchor=NW, font=('Ivy 10 bold'), bg='#D9D9D9', fg='#000000')
+        l_codigo_barras.place(x=10, y=130)
+        e_codigo_barras = Entry(frame_meio, width=30, justify='left', relief=SOLID)
+        e_codigo_barras.place(x=130, y=131)
+
+
+        #Criando botões---------------------------------------------------------------------------------------------------------
+
+        #Label e entrada para imagem do botão carregar
+        l_imagem = Label(frame_meio, text= 'Imagem do item', height=1, anchor=NW, font=('Ivy 10 bold'), bg='#D9D9D9', fg='#000000')
+        l_imagem.place(x=10, y=160)
+        #botao para carregar a imagem
+        b_carregar = Button(frame_meio, width=29, text= 'carregar'.upper(), compound=CENTER, anchor=CENTER, overrelief=RIDGE, font=('Ivy 8'), bg='#D9D9D9', fg='#000000')
+        b_carregar.place(x=130, y=161)
+
+    
+
+        #Botão inserir
+        b_inserir = Button(frame_meio, width=20, text= 'Adicionar'.upper(), compound=CENTER, anchor=CENTER, overrelief=RIDGE, font=('Ivy 8'), bg='#D9D9D9', fg='#000000')
+        b_inserir.place(x=330, y=10)
+
+        #Botão update
+        b_update = Button(frame_meio, width=20, text= 'Update'.upper(), compound=CENTER, anchor=CENTER, overrelief=RIDGE, font=('Ivy 8'), bg='#D9D9D9', fg='#000000')
+        b_update.place(x=330, y=50)
+
+        #Botão delete
+        b_delete = Button(frame_meio, width=20, text= 'Update'.upper(), compound=CENTER, anchor=CENTER, overrelief=RIDGE, font=('Ivy 8'), bg='#D9D9D9', fg='#000000')
+        b_delete.place(x=330, y=90)
+
+        #Botão ver imagem
+        b_item = Button(frame_meio, width=20, text= 'Ver item'.upper(), compound=CENTER, anchor=CENTER, overrelief=RIDGE, font=('Ivy 8'), bg='#D9D9D9', fg='#000000')
+        b_item.place(x=330, y=161)
+
+
+
+        #CRIANDO A TABELA PARA MOSTRAR O ESTOQUE ----------------------------------------------------------------
+
+
+        def mostrar():
+
+            # creating a treeview with dual scrollbars
+            tabela_head = ['#Item','Nome',  'Sala/Área','Descrição', 'Marca/Modelo', 'Número de série']
+            lista_itens = []
+            global tree
+
+            tree = ttk.Treeview(frame_baixo, selectmode="extended",columns=tabela_head, show="headings")
+
+            # vertical scrollbar
+            vsb = ttk.Scrollbar(frame_baixo, orient=VERTICAL, command=tree.yview)
+
+            # horizontal scrollbar
+            hsb = ttk.Scrollbar(frame_baixo, orient=HORIZONTAL, command=tree.xview)
+
+            tree.configure(yscrollcommand=vsb.set, xscrollcommand=hsb.set)
+            tree.grid(column=0, row=0, sticky='nsew')
+            vsb.grid(column=1, row=0, sticky='ns')
+            hsb.grid(column=0, row=1, sticky='ew')
+
+            # define o peso da linha e coluna do frame como 1
+            frame_baixo.grid_rowconfigure(0, weight=1)
+            frame_baixo.grid_columnconfigure(0, weight=1)
+
+            hd=["center","center","center","center","center","center"]
+            h=[40,150,100,160,130,100]
+            n=0
+
+            # define o tamanho da fonte do cabeçalho da tabela
+            style = ttk.Style()
+            style.configure("Treeview.Heading", font=('Helvetica', 14))
+
+            for col in tabela_head:
+                tree.heading(col, text=col.title(), anchor=tk.CENTER)
+
+                # adjust the column's width to the header string
+                tree.column(col, width=h[n],anchor=hd[n])
+
+                n+=1
+
+            for item in lista_itens:
+                tree.insert('', 'end', values=item)
+
+
+        mostrar()
+
+
