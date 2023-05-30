@@ -14,7 +14,7 @@ O Sistema de Gerenciamento de estoque para Apoio aos Cursos de Engenharia e Arqu
 - `Empréstimos de produtos`: Os alunos podem solicitar empréstimos de produtos registrados no sistema. O sistema controla a quantidade disponível de cada item, evitando empréstimos em excesso ou de produtos não disponíveis. Além disso, o sistema registra as informações do aluno responsável pelo empréstimo, o produto solicitado e a quantidade emprestada.
 - `Busca de produtos e alunos`: O sistema oferece a funcionalidade de busca, permitindo localizar rapidamente alunos e produtos cadastrados. Isso agiliza o processo de consulta e facilita a identificação de informações específicas.
 - `Interface intuitiva`: O sistema conta com uma interface amigável e intuitiva, facilitando a navegação e uso por parte dos usuários. A disposição das informações, botões e menus foi pensada de forma a tornar a experiência do usuário agradável e eficiente.
-
+## Objetivo
 O objetivo principal do Sistema de Gerenciamento de Apoio aos Cursos de Engenharia e Arquitetura é proporcionar aos alunos e professores uma ferramenta que otimize o controle de materiais e empréstimos, garantindo um processo organizado e eficaz. Com o uso dessa aplicação, é possível reduzir o tempo gasto na busca por recursos, evitar perdas e extravios de materiais, e promover uma gestão mais eficiente dos recursos disponíveis.
 
 Este projeto foi desenvolvido utilizando a linguagem de programação Python e frameworks como Tkinter para a interface gráfica. Além disso, foi utilizado um banco de dados para armazenamento das informações, garantindo a persistência dos dados.
@@ -23,15 +23,21 @@ Esperamos que este sistema seja uma ferramenta útil para a comunidade acadêmic
 
 ## Capturas de Tela
 Aqui estão algumas capturas de tela do sistema em funcionamento:
+![Descrição do projeto GlicoCare, onde se tem um paciente medindo glicose com um glicosímetro, conectado via Bluetooth ao aplicativo que o profissional da saúde tem acesso.](https://github.com/joaodrj/Almoxarifado-Unimax/blob/main/imagens_capturaTela/login.png)
+</p>
 
-Tela de Login
+![Descrição do projeto GlicoCare, onde se tem um paciente medindo glicose com um glicosímetro, conectado via Bluetooth ao aplicativo que o profissional da saúde tem acesso.](https://github.com/joaodrj/Almoxarifado-Unimax/blob/main/imagens_capturaTela/telaInicial.png)
+</p>
 
-Tela de Cadastro de Alunos
+![Descrição do projeto GlicoCare, onde se tem um paciente medindo glicose com um glicosímetro, conectado via Bluetooth ao aplicativo que o profissional da saúde tem acesso.](https://github.com/joaodrj/Almoxarifado-Unimax/blob/main/imagens_capturaTela/telaEstoque.png)
+</p>
 
-Tela de Matrícula em Disciplinas
+![Descrição do projeto GlicoCare, onde se tem um paciente medindo glicose com um glicosímetro, conectado via Bluetooth ao aplicativo que o profissional da saúde tem acesso.](https://github.com/joaodrj/Almoxarifado-Unimax/blob/main/imagens_capturaTela/telaAlunos.png)
+</p>
 
-Como Instalar
-Para instalar o sistema de gerenciamento, siga os seguintes passos:
+![Descrição do projeto GlicoCare, onde se tem um paciente medindo glicose com um glicosímetro, conectado via Bluetooth ao aplicativo que o profissional da saúde tem acesso.](https://github.com/joaodrj/Almoxarifado-Unimax/blob/main/imagens_capturaTela/telaSaida.png)
+</p>
+
 
 ## Tecnologias utilizadas
 
