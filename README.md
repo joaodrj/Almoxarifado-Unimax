@@ -38,17 +38,39 @@ Aqui estão algumas capturas de tela do sistema em funcionamento:
 ![Descrição do projeto GlicoCare, onde se tem um paciente medindo glicose com um glicosímetro, conectado via Bluetooth ao aplicativo que o profissional da saúde tem acesso.](https://github.com/joaodrj/Almoxarifado-Unimax/blob/main/imagens_capturaTela/telaSaida.png)
 </p>
 
+## Tecnologias utilizadas
+
+Python
+Sql
+
+
+## :rocket: Rodando o projeto
+Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando para iniciar o projeto:
+
+
+## :soon: Implementação futura
+* O que será implementado na próxima sprint?
+
+
+## :handshake: Autores
+<table>
+  <tr>
+    <td align="center">
+      <a href="http://github.com/joaodrj">
+        <img src="https://avatars.githubusercontent.com/u/56259137?v=4" width="100px;" alt="Foto de Tati Alves no GitHub"/><br>
+        <sub>
+          <b>tatialveso</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
 ## Tecnologias utilizadas
 
 Python
 Sql
-## Autores
-O sistema de gerenciamento foi desenvolvido pelos seguintes autores:
 
-* João Dias Rocha junior
-* Leonardo
-* Victor
 
 ## Licença
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE.md para mais informações.
