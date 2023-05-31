@@ -40,8 +40,16 @@ Aqui estão algumas capturas de tela do sistema em funcionamento:
 
 ## Tecnologias utilizadas
 
-Python
-Sql
+Esta seção lista as principais tecnologias e bibliotecas utilizadas para desenvolver o projeto:
+
+
+
+* [Python](https://www.python.org/) - Linguagem de programação utilizada para desenvolver o aplicativo.
+* [Tkinter](https://docs.python.org/3/library/tkinter.html) -  Biblioteca padrão do Python para criação de interfaces gráficas.
+* [SQLite3](https://docs.python.org/3/library/sqlite3.html) - Biblioteca Python para interagir com banco de dados SQLite
+
+Make sure to replace the URLs with the correct links to the documentation or resources of each technology you are using in your project.
+
 
 
 ## :rocket: Rodando o projeto
@@ -57,19 +65,14 @@ Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando 
   <tr>
     <td align="center">
       <a href="http://github.com/joaodrj">
-        <img src="https://avatars.githubusercontent.com/u/56259137?v=4" width="100px;" alt="Foto de Tati Alves no GitHub"/><br>
+        <img src="https://avatars.githubusercontent.com/u/62823813?s=400&u=9701c862c3511636ce79d721359fa49f3560dff1&v=4" width="100px;" alt="Foto de João no GitHub"/><br>
         <sub>
-          <b>tatialveso</b>
+          <b>João Jr</b>
         </sub>
       </a>
     </td>
   </tr>
 </table>
-
-## Tecnologias utilizadas
-
-Python
-Sql
 
 
 ## Licença
