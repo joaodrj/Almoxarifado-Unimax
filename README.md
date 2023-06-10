@@ -53,11 +53,62 @@ Make sure to replace the URLs with the correct links to the documentation or res
 
 
 ## :rocket: Rodando o projeto
-Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando para iniciar o projeto:
+## Explicação do projeto
+
+O projeto é dividido em vários arquivos, cada um desempenhando uma função específica.
+
+### `database.py`
+Neste arquivo, estabelecemos a conexão com o banco de dados e criamos as tabelas necessárias para o funcionamento do sistema.
+
+### `view.py`
+No arquivo `view.py`, encontramos as funções responsáveis pela manipulação das tabelas no banco de dados. Aqui, realizamos operações como inserção, consulta, atualização e exclusão de dados.
+
+### `login.py`
+O arquivo `login.py` contém a implementação da tela de login do programa. É nesta tela que o usuário deve inserir seu login e senha para acessar o sistema. No momento, as credenciais de login padrão são "admin" para o nome de usuário e "admin" para a senha.
+
+### `home.py`
+O arquivo `home.py` contém a estrutura principal do programa. Nele, definimos classes para cada tela do programa, incluindo a tela principal e outras telas auxiliares. Essas classes são responsáveis por exibir as informações relevantes ao usuário e permitir a interação com o sistema.
+
+### `main.py`
+O arquivo `main.py` é o ponto de entrada do programa. É neste arquivo que chamamos as funções e classes necessárias para iniciar e executar o programa.
+
+Essa estrutura de arquivos e módulos permite uma organização clara e modular do projeto, facilitando a manutenção e o desenvolvimento de novos recursos. Cada arquivo desempenha um papel específico, contribuindo para a funcionalidade geral do sistema.
+
+## Passos iniciais
+
+Para executar o projeto, siga os passos abaixo:
+
+1. Instale o Python: [https://www.python.org/](https://www.python.org/)
+
+2. Adicione o diretório do Pip (gerenciador de pacotes do Python) às variáveis de ambiente do Windows. Caso não tenha o Pip instalado, visite o site [https://pypi.org/project/pip/](https://pypi.org/project/pip/) e instale o pacote, que é usado para facilitar a instalação de bibliotecas do Python.
+
+3. Abra a pasta contendo os arquivos em uma IDE de sua preferência. Para este projeto, estamos usando o VS Code.
+
+4. Instale as bibliotecas necessárias para executar o projeto. No arquivo `requirements.txt`, encontram-se as bibliotecas utilizadas. Para instalá-las, execute o seguinte comando no terminal:
+
+   ```shell
+   pip install -r requirements.txt
+   
+5. Execute o arquivo main.py para testar o programa.
+
 
 
 ## :soon: Implementação futura
-* O que será implementado na próxima sprint?
+
+Aqui estão algumas implementações futuras que podem ser adicionadas ao projeto para o correto funcionamento :
+
+1. **Movimentação de Estoque para Empréstimos**: Implementar a funcionalidade de registrar empréstimos de materiais aos alunos, permitindo a movimentação do estoque. Isso inclui a atualização do banco de dados para registrar empréstimos, a criação de telas para gerenciar empréstimos e a verificação de disponibilidade de materiais.
+
+2. **Relatórios e Estatísticas**: Adicionar recursos de geração de relatórios e estatísticas para fornecer insights sobre o estoque, empréstimos, devoluções, etc. Isso pode incluir a criação de gráficos, tabelas e visualizações para facilitar a compreensão dos dados.
+
+3. **Integração com API de Notificações**: Integrar uma API de notificações para enviar lembretes e notificações aos alunos sobre a data de devolução dos materiais emprestados. Isso pode ser feito por meio de mensagens de texto, e-mails ou notificações no aplicativo.
+
+4. **Melhorias na Interface do Usuário**: Aprimorar a interface do usuário com elementos visuais, melhor organização dos componentes e fluxo de navegação intuitivo. Isso pode incluir o uso de bibliotecas de design como Bootstrap, Material-UI, entre outras.
+
+5. **Gerenciamento de Usuários**: Implementar um sistema de autenticação e controle de acesso para diferentes usuários, como administradores e alunos. Isso permite a criação de contas de usuário, login seguro e permissões de acesso adequadas.
+
+Essas são apenas algumas sugestões de melhorias para o projeto. Sinta-se à vontade para adicionar outras funcionalidades de acordo com suas necessidades e objetivos.
+
 
 
 ## :handshake: Autores
